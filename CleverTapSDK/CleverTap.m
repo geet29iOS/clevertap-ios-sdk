@@ -4009,15 +4009,10 @@ static NSMutableArray<CTInAppDisplayViewController*> *pendingNotificationControl
 #if defined(CLEVERTAP_LOCATION)
     [CTLocationManager getLocationWithSuccess:success andError:error];
 #else
-    if (isLocationEnabled){
-        [CTLocationManager getLocationWithSuccess:success andError:error];
-    }
-    else {
-        NSString *errorMsg = @"To Enable CleverTap Location services/apis please build the SDK with the CLEVERTAP_LOCATION macro or use enableLocation method";
-        CleverTapLogStaticDebug(@"%@",errorMsg);
-        if (error) {
-            error(errorMsg);
-        }
+    NSString *errorMsg = @"To Enable CleverTap Location services/apis please build the SDK with the CLEVERTAP_LOCATION macro or use enableLocation method";
+    CleverTapLogStaticDebug(@"%@",errorMsg);
+    if (error) {
+        error(errorMsg);
     }
 #endif
 }
