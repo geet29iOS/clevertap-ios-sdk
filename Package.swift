@@ -50,7 +50,7 @@ let package = Package(
                 .headerSearchPath("Inbox/views"),
                 .headerSearchPath("ProductExperiences/")
             ],
-            swiftSettings: [.define("CLEVERTAP_LOCATION")],
+            swiftSettings: [.define("CLEVERTAP_LOCATION=YES")],
             linkerSettings: [
                 .linkedFramework("AVFoundation"),
                 .linkedFramework("AVKit"),
